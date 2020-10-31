@@ -102,6 +102,7 @@ SynthDef {
 		// and then construct the argument array from combining
 		// the OutputProxies of these two Control ugens in the original order.
 		values = def.prototypeFrame[skipArgs..].extend( names.size );
+		format("\nThe metadata is:\n\t%", metadata).postln;
 		if((specs = metadata.tryPerform(\at, \specs)).notNil) {
 			values = values.collect { |value, i|
 				value ?? {
